@@ -1,17 +1,24 @@
 import { Button } from '../../styled'
 import { 
+  DescWrapper,
   Divider, 
+  HeaderDesc, 
+  HeaderImage, 
   HeaderLeft, 
   HeaderRight, 
   HeaderWrapper, 
   ImageLogo, 
   Navbar, 
+  SecureText, 
+  SmallBtn, 
+  SmallText, 
   TextLeft, 
   TextRight, 
   TextWrapper 
 } from './header.styled'
 
 import Logo from '../../assets/logo.png'
+import People from '../../assets/myrtrim.png'
 
 
 const Header = () => {
@@ -34,6 +41,14 @@ const Header = () => {
           <Button>Create free account</Button>
         </HeaderRight>
        </Navbar>
+       <HeaderDesc>
+        <DescWrapper>
+          <SecureText>Secure & seamless online transactions</SecureText>
+          <SmallText>Providing you with the best online payment experience</SmallText>
+          <SmallBtn>Create free account</SmallBtn>
+        </DescWrapper>
+        <HeaderImage src={People} alt='people image'/>
+       </HeaderDesc>
     </HeaderWrapper>
    
   )

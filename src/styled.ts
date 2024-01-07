@@ -65,7 +65,7 @@ const GlobalStyle = createGlobalStyle`
 
 export const Container = styled.div`
 	width: 100%;
-	max-width: 1300px;
+	//max-width: 1300px;
 	
 
 	/* @media screen and (max-width: 960px) {

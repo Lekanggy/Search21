@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Column, Row, Text600 } from '../../styled'
+import { Button, Column, Row, Text400, Text600 } from '../../styled'
 
 
 export const HeaderWrapper = styled(Column)`
@@ -47,5 +47,43 @@ export const Divider = styled.span`
     width: 2px;
     height: 27px;
     background: var(--white);
+`
+
+export const HeaderDesc = styled(Row)`
+    //padding: 150px;
+    justify-content: center;
+    align-items: center;//padding-right: 100px;
+    position: relative;
+`
+export const DescWrapper = styled(Column)`
+    padding-left: 90px;
+    padding-top: 8rem;
+    align-items: flex-start;
+    gap: 32px;
+`
+export const SecureText = styled(Text600)`
+    width: 543px;
+    font-size: 46px;
+    line-height: 64px; 
+    color: var(--white);
+`
+
+export const SmallText = styled(Text400)`
+    font-size: 18px;
+    line-height: 160%;
+    color: (--white);
+`
+
+export const HeaderImage = styled.img`
+    width: 650px;
+    height: 600px;
+    object-fit: cover;
+    /* position: absolute;
+    right: 0; */
+`
+
+export const SmallBtn = styled(Button)`
+    width: 220px;
+    padding: 16px 24px;
 `
 
