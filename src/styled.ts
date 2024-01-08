@@ -50,6 +50,9 @@ const GlobalStyle = createGlobalStyle`
    
     --label-color: #088F71;
     --white: #fff;
+    --Sorta-Sage: #94ABA4;
+    --Glass: #080808;
+    --Screen:#121212;
 	--btn-col: linear-gradient(151deg, rgba(92, 178, 58, 0.80) 0%, rgba(4, 128, 2, 0.80) 100%);
   }
 
@@ -65,6 +68,7 @@ const GlobalStyle = createGlobalStyle`
 
 export const Container = styled.div`
 	width: 100%;
+    overflow: hidden;
 	//max-width: 1300px;
 	
 

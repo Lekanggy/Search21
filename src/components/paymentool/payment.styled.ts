@@ -37,7 +37,7 @@ export const CardWrapper = styled(Row)`
 export const PaymentCard = styled(Column)`
     align-items: flex-start;
     gap: 20px;
-    padding: 30px 40px;
+    padding: 30px 20px;
     background: var(--white);
     height: 388px;
     width: 380px; 
