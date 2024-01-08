@@ -101,7 +101,7 @@ export const FundWrapper = styled(Row)`
 
 export const FundLeft = styled(Column)`
     padding-left: 52px;
-    padding-top: 4.5rem;
+    padding-top: 5rem;
     align-items: flex-start;
     gap: 24px;
 `

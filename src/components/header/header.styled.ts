@@ -1,9 +1,13 @@
 import styled from 'styled-components'
 import { Button, Column, Row, Text400, Text600 } from '../../styled'
 
-
+export const HeaderCentral = styled.div`
+    position: relative;
+`
 export const HeaderWrapper = styled(Column)`
     background: #060809;
+    height: 771px;
+    overflow: hidden;
 `
 export const Navbar = styled.nav`
     display: flex;
@@ -54,6 +58,12 @@ export const HeaderDesc = styled(Row)`
     justify-content: center;
     align-items: center;//padding-right: 100px;
     position: relative;
+    //overflow: hidden;
+`
+export const CTAHeader = styled(HeaderDesc)`
+    flex-direction: column;
+    position: relative;
+    /* overflow:hidden; */
 `
 export const DescWrapper = styled(Column)`
     padding-left: 90px;
@@ -61,11 +71,22 @@ export const DescWrapper = styled(Column)`
     align-items: flex-start;
     gap: 32px;
 `
+
+export const DescWrapperII = styled(DescWrapper)`
+    /* padding-top: 5rem; */
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+`
 export const SecureText = styled(Text600)`
     width: 543px;
     font-size: 46px;
     line-height: 64px; 
     color: var(--white);
+`
+export const SecureTextII = styled(SecureText)`
+    width: 690px;
+    text-align: center;
 `
 
 export const SmallText = styled(Text400)`
@@ -73,13 +94,26 @@ export const SmallText = styled(Text400)`
     line-height: 160%;
     color: (--white);
 `
+export const SmallTextII = styled(SmallText)`
+    width: 584px;
+    text-align: center;
+`
 
 export const HeaderImage = styled.img`
-    width: 650px;
-    height: 600px;
+    width: 690px;
+    height: 650px;
     object-fit: cover;
     /* position: absolute;
     right: 0; */
+`
+
+export const HeaderImageII = styled(HeaderImage)`
+    width: 900px;
+    height: 550px;
+    position: absolute;
+    bottom: -25rem; 
+    right: 10rem;
+    border-radius: 8px;
 `
 
 export const SmallBtn = styled(Button)`

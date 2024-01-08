@@ -84,15 +84,15 @@ const BillSection = () => {
 
         <FundDesc>
           <FundWrapper>
-          <FundLeft>
-                <FundTexItem>
-                  <SendText>Send funds</SendText>
-                  <SendTextII>Remit taxes Buy utilities</SendTextII>
-                  <SendTextII>Buy utilities</SendTextII>
-                </FundTexItem>
-                <BtnII>Get Started</BtnII>
-              </FundLeft>
-              <img src={PhoneImage} alt='bus image'/>
+            <FundLeft>
+              <FundTexItem>
+                <SendText>Send funds</SendText>
+                <SendTextII>Remit taxes</SendTextII>
+                <SendTextII>Buy utilities</SendTextII>
+              </FundTexItem>
+              <BtnII>Get Started</BtnII>
+            </FundLeft>
+            <img src={PhoneImage} alt='bus image'/>
           </FundWrapper>
         </FundDesc>
       </BillMain>

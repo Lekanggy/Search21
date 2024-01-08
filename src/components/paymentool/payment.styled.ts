@@ -7,7 +7,7 @@ export const PaymentWrapper = styled.main`
     justify-content: center;
     align-items: center;
     background: var(--white);
-    margin-top: 3rem;
+    margin-top: 5rem;
     padding: 0 91px;
 `
 

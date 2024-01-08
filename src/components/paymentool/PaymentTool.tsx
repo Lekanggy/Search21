@@ -3,6 +3,23 @@ import Secure from "../icons/Secure"
 import UserMsg from "../icons/UserMsg"
 import { CardDesc, CardTitle, CardWrapper, PaymentCard, PaymentWrapper, SmallTitle, Title, TitleWrapper } from "./payment.styled"
 
+const dataItem = [
+    {
+        id: 1,
+        title: "Secure",
+        desc: "Your data is secure. It is continuously monitored, audited, and stored in an encrypted form."
+    },
+    {
+        id: 1,
+        title: "Secure",
+        desc: "Your data is secure. It is continuously monitored, audited, and stored in an encrypted form."
+    },
+    {
+        id: 1,
+        title: "Secure",
+        desc: "Your data is secure. It is continuously monitored, audited, and stored in an encrypted form."
+    }
+]
 
 const PaymentTool = () => {
   return (
@@ -23,7 +40,8 @@ const PaymentTool = () => {
             <PaymentCard>
                 <Secure/>
                 <CardTitle>Secure</CardTitle>
-                <CardDesc>Your data is secure. It is 
+                <CardDesc>
+                    Your data is secure. It is 
                     continuously monitored, audited, and stored in an encrypted form.
                 </CardDesc>
             </PaymentCard>
