@@ -64,7 +64,11 @@ const Header = ({cat, setItem}:CatProp) => {
         {
           cat === "single" ? (
             <HeaderDesc>
-              <DescWrapper>
+              <DescWrapper
+                 initial={{opacity:0, translateX: 200, translateY: -100}}
+                 animate={{opacity: 1, translateX: -10, translateY: 0}}
+                 transition={{duration: 0.3, delay:0., ease:"easeInOut"}}
+              >
                 <SecureText>Secure & seamless online transactions</SecureText>
                 <SmallText>Providing you with the best online payment experience</SmallText>
                 <SmallBtn>Create free account</SmallBtn>
@@ -72,14 +76,24 @@ const Header = ({cat, setItem}:CatProp) => {
               <HeaderImage src={People} alt='people image'/>
             </HeaderDesc>
           ):(
-            <CTAHeader>
+            <CTAHeader
+              initial={{opacity:0, translateX: -50, translateY: 20}}
+              animate={{opacity: 1, translateX: 20, translateY: -20}}
+              transition={{duration: 0.3,delay:0, ease:"easeInOut"}}
+            >
               <DescWrapperII>
                 <SecureTextII>Manage payroll, compliance & HR in real time</SecureTextII>
                 <SmallTextII>
                   Make income tax remittances to the state internal
                   revenue service for your employees.
                 </SmallTextII>
-                <SmallBtn>Create free account</SmallBtn>
+                <SmallBtn
+                  initial={{ translateX: -200}}
+                  animate={{ translateX: 0}}
+                  transition={{duration: 0.3,delay:0.1, ease:"easeInOut"}}
+                >
+                  Create free account
+                </SmallBtn>
               </DescWrapperII>
               <InCircleII/>
             </CTAHeader>

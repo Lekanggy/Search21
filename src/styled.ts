@@ -1,5 +1,6 @@
 
 import styled, {createGlobalStyle} from 'styled-components'
+import {motion} from 'framer-motion'
 
 type HeadingProps = {
     margin?: string,
@@ -77,7 +78,7 @@ const GlobalStyle = createGlobalStyle`
 
 `;
 
-export const Container = styled.div`
+export const Container = styled(motion.div)`
 	width: 100%;
     overflow: hidden;
 	//max-width: 1300px;
@@ -99,7 +100,7 @@ export const Heading = styled.h2<HeadingProps>`
 	text-align: center;
 	width: ${({ width }) => (width ? width : '100%')};
 `;
-export const Row = styled.div<FlexProps>`
+export const Row = styled(motion.div)<FlexProps>`
 	display: flex;
 	justify-content: ${({ justify }) => (justify ? justify : '')};
 	align-items: ${({ align }) => (align ? align : '')};
@@ -116,7 +117,7 @@ export const Row = styled.div<FlexProps>`
 	flex-wrap: ${({ wrap }) => (wrap ? wrap : '')};
 `;
 
-export const Column = styled.div<FlexProps>`
+export const Column = styled(motion.div)<FlexProps>`
 	display: flex;
 	flex-direction: column;
 	justify-content: ${({ justify }) => (justify ? justify : '')};
@@ -191,7 +192,7 @@ export const ButtonItem = styled(FormItem)`
  
     
 `
-export const Button = styled.button`
+export const Button = styled(motion.button)`
     display: flex;
     /* width: 100%; */
     padding: 13px 24px;

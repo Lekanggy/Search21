@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { Button, Column, Row, Text400, Text600 } from '../../styled'
+import { motion} from 'framer-motion'
 
 export const HeaderCentral = styled.div`
     position: relative;
@@ -54,8 +55,9 @@ export const Divider = styled.span`
     background: var(--white);
 `
 
-export const HeaderDesc = styled(Row)`
+export const HeaderDesc = styled(motion.div)`
     //padding: 150px;
+    display: flex;
     justify-content: center;
     align-items: center;//padding-right: 100px;
     position: relative;
