@@ -18,7 +18,6 @@ export const BillSectionTop = styled.section`
     padding-right:90px;
     padding-left: 40px;
     position: relative;
-   
 `
 export const BillSectionBottom = styled(BillSectionTop)`
     
@@ -28,35 +27,59 @@ export const LeftBill = styled(Column)`
     gap: 40px;
     border-left: 6px solid #DBE2EA;
 `
-export const TextWrapper = styled(Column)`
+export const TextWrapper = styled(Column)<{active?: string}>`
     padding-left: 32px;
     justify-content: center;
     align-items: flex-start;
     gap: 8px;
-    border-left: 6px solid #25A75C;
+    border-left: ${({active})=> active === "active" ? "6px solid #25A75C" : "6px solid #DBE2EA" };
     margin-left: -6px;
+    cursor: pointer;
 `
  export const BTitle = styled(Title)`
     font-size: 28px;
  `
-export const BSmall = styled(SmallTitle)``    
+export const BSmall = styled(SmallTitle)`
+    padding-right: 5rem;
+`    
 
-export const RightItem = styled.div`
-    width: 600px;
+export const RightItem = styled.div<{bg?:string}>`
+    display: grid;
+    place-content: center;
+    width: 650px;
+    height: 771px;
+    border-radius: 8px;
+    background:#F1F1F1;
+    position: relative;
+    overflow:hidden;
+`
+export const RightItemII = styled.div`
+    display: grid;
+    place-content: center;
+    width: 650px;
     height: 771px;
     border-radius: 8px;
     background: #F1F1F1;
-    position: relative;
+   z-index: 10;
+   padding: 30px 40px;
 `
 export const RightImage = styled.img`
     position: absolute;
-    width: 575px;
-    height: 617px;
+    width: 549px;
+    height: 621px;
     flex-shrink: 0;
     border-radius: 24px 0px 0px 0px;
-    //box-shadow: 0px 3px 24px 13px rgba(66, 69, 67, 0.07);
-    right: -2rem;
+    right: -2.5rem;
     bottom: -2.3rem;
+`
+
+export const WalletImage = styled(RightImage)`
+    position: relative;
+    width: 482px;
+    height: 630px;
+    right: 0;
+    bottom: 0;
+    object-fit: cover;
 `
 
 export const BottomLeft = styled(RightItem)`
@@ -64,10 +87,11 @@ export const BottomLeft = styled(RightItem)`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
 `
 
-export const BottomRight = styled(Row)``
+export const BottomRight = styled(Row)`
+
+`
 export const BottomRightItem = styled(Column)`
     align-items: flex-start;
     gap: 32px;
@@ -89,11 +113,11 @@ export const FundWrapper = styled(Row)`
    background: var(--btn-col);
    border-radius: 8px;
    box-shadow: 0px 4px 50px 0px rgba(0, 0, 0, 0.08);
-   height: 400px;
+   height: 522px;
    justify-content: space-between;
 
     img{
-       width: 850px;
+        width: 1050px;
         height: 100%;
         object-fit: cover;
     }
@@ -129,3 +153,4 @@ export const BtnII = styled(Btn)`
     color: #25A75C;
     width: 200px;
 `
+

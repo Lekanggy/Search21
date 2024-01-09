@@ -1,13 +1,13 @@
 import styled from "styled-components";
 import { Column, Row, Text400, Text500, Text600 } from "../../styled";
 
-export const PaymentWrapper = styled.main`
+export const PaymentWrapper = styled.main<{cat: string}>`
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background: var(--white);
-    margin-top: 5rem;
+    margin-top: ${({cat})=> cat === "single" ? "5rem": "30rem"};
     padding: 0 91px;
 `
 

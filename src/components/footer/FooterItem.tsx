@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { CopyRightText, DescText, DescTextTitle, FooterAbout, FooterContainer, FooterLeft, FooterProduct, FooterRight, FooterSocialIcon, FooterWrapper } from './footer.styled'
 import Facebook from '../icons/Facebook'
 import Instagram from '../icons/Instagram'

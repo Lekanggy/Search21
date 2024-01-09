@@ -1,55 +1,33 @@
-import Fast from "../icons/Fast"
-import Secure from "../icons/Secure"
-import UserMsg from "../icons/UserMsg"
+import { CatProp } from "../../screens/HomePage"
+import { currencyData, dataItem, smaTitle, smaTitleII } from "./data"
 import { CardDesc, CardTitle, CardWrapper, PaymentCard, PaymentWrapper, SmallTitle, Title, TitleWrapper } from "./payment.styled"
 
-const dataItem = [
-    {
-        id: 1,
-        title: "Secure",
-        desc: "Your data is secure. It is continuously monitored, audited, and stored in an encrypted form."
-    },
-    {
-        id: 1,
-        title: "Secure",
-        desc: "Your data is secure. It is continuously monitored, audited, and stored in an encrypted form."
-    },
-    {
-        id: 1,
-        title: "Secure",
-        desc: "Your data is secure. It is continuously monitored, audited, and stored in an encrypted form."
-    }
-]
 
-const PaymentTool = () => {
+
+
+const PaymentTool = ({cat}:CatProp) => {
+
+    const data = cat === "single" ? dataItem : currencyData
   return (
-    <PaymentWrapper>
+    <PaymentWrapper cat={cat}>
         <TitleWrapper>
             <Title>Payments tools designed for you</Title>
             <SmallTitle>
-                Explore payment features that 
-                provides you with every possible solution
+                {
+                    cat === "single" ? smaTitle : smaTitleII
+                }
             </SmallTitle>
         </TitleWrapper>
         <CardWrapper>
-            <PaymentCard>
-                <UserMsg/>
-                <CardTitle>User Friendly</CardTitle>
-                <CardDesc>Highly responsive and easy to navigate</CardDesc>
-            </PaymentCard>
-            <PaymentCard>
-                <Secure/>
-                <CardTitle>Secure</CardTitle>
-                <CardDesc>
-                    Your data is secure. It is 
-                    continuously monitored, audited, and stored in an encrypted form.
-                </CardDesc>
-            </PaymentCard>
-            <PaymentCard>
-                <Fast/>
-                <CardTitle>Fast</CardTitle>
-                <CardDesc>Transacting takes only a few seconds - it's convenient and safe.</CardDesc>
-            </PaymentCard>
+            {
+                data?.map(({id, desc, title, ICN})=>
+                        <PaymentCard key={id}>
+                            <ICN/>
+                            <CardTitle>{title}</CardTitle>
+                            <CardDesc>{desc}</CardDesc>
+                        </PaymentCard>
+                    )
+            }
         </CardWrapper>
     </PaymentWrapper>
   )

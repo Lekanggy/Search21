@@ -3,6 +3,7 @@ import { Button, Column, Row, Text400, Text600 } from '../../styled'
 
 export const HeaderCentral = styled.div`
     position: relative;
+    background: #060809;
 `
 export const HeaderWrapper = styled(Column)`
     background: #060809;
@@ -34,12 +35,12 @@ export const TextWrapper = styled(Row)`
     align-items: center;
     gap: 20px;
 `
-export const TextLeft = styled(Text600)`
+export const TextLeft = styled(Text600)<{active?:string}>`
     height: 39px;
     padding: 10px;
     justify-content: center;
     align-items: center;
-    border-bottom: 4px solid #25A75C;
+    border-bottom:${({active})=> active === "active" ? "4px solid #25A75C" : "none"} ;
     cursor: pointer;
 `
 export const TextRight = styled(TextLeft)`
@@ -73,7 +74,7 @@ export const DescWrapper = styled(Column)`
 `
 
 export const DescWrapperII = styled(DescWrapper)`
-    /* padding-top: 5rem; */
+    padding-top: 10rem; 
     justify-content: center;
     align-items: center;
     gap: 20px;

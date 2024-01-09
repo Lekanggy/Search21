@@ -32,7 +32,17 @@ type FlexProps = {
 const GlobalStyle = createGlobalStyle`
   body{
 	
-	
+	&::-webkit-scrollbar{
+		border-radius: 20px;
+		background: rgba(163, 163, 173, 0.20);
+		width: 5px;
+		height: 10px;
+    }
+   
+    &::-webkit-scrollbar-thumb {
+        background:#088F71;
+        border-radius: 20px;
+    }
 	
   }
 
@@ -54,6 +64,7 @@ const GlobalStyle = createGlobalStyle`
     --Glass: #080808;
     --Screen:#121212;
 	--btn-col: linear-gradient(151deg, rgba(92, 178, 58, 0.80) 0%, rgba(4, 128, 2, 0.80) 100%);
+    --bg-col: linear-gradient(151deg, rgba(92, 178, 58) 0%, rgb(4, 128, 2) 100%);
   }
 
  

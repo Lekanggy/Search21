@@ -20,68 +20,111 @@ import {
   SendText,
   SendTextII,
   BtnII,
-  FundWrapper
+  FundWrapper,
+  WalletImage,
+  RightItemII
 } from './bill.styled'
 
 import BillTag from '../../assets/bildetails.png'
+import Wallet from '../../assets/updateImag.png'
 import InCircle from '../circles/Incircle'
 import Phone from '../phone/Phone'
-import { SmallTitle, Title } from '../paymentool/payment.styled'
+import { Title } from '../paymentool/payment.styled'
 import AppleStore from '../icons/AppleStore'
 import GoogleStore from '../icons/GoogleStore'
 import PhoneImage from '../../assets/busIIImage.png'
+import { billData, billDataII } from './data'
+import { CatProp } from '../../screens/HomePage'
+import { useState, useEffect } from 'react'
 
 
 
-const BillSection = () => {
+const BillSection = ({cat}:CatProp) => {
+
+    //const [active, setActive] = useState("active")
+    const act = cat === "single" ? "Pay bills" : "Reports"
+    const [current, setCurrent] = useState(act)
+    const [imgItem, setImgItem] = useState("Pay bills")
+
+    const handleCurrentItem = (k:string)=>{
+      setCurrent(k)
+      setImgItem(k)
+      //setActive("active")
+    }
+
+  const data = cat === "single" ? billData : billDataII
+
+  useEffect(()=>{
+    if(cat === "buz"){
+      setCurrent("Reports")
+    }else{
+      setCurrent("Pay bills")
+    }
+    
+  },[cat])
   return (
     <BillWrapper>
       <BillMain>
         <BillSectionTop>
           <InCircle/>
           <LeftBill>
-            <TextWrapper>
-              <BTitle>Pay bills</BTitle>
-              <BSmall>Paying your bills has never been so easy.</BSmall>
-            </TextWrapper>
-            <TextWrapper>
-              <BTitle>Buy Airtime & Data</BTitle>
-              <BSmall>Never get caught with low airtime and data again!</BSmall>
-            </TextWrapper>
-            <TextWrapper>
-              <BTitle>Money Transfer</BTitle>
-              <BSmall>Transferring money is now hassle-free.</BSmall>
-            </TextWrapper>
-            <TextWrapper>
-              <BTitle>Pay Toll Fee</BTitle>
-              <BSmall>Never worry about getting a toll ticket again.</BSmall>
-            </TextWrapper>
+            {
+              data.map(d=> 
+                  <TextWrapper 
+                    key={d.id} 
+                    active={current === d.title ? "active" : ""}
+                    onClick={()=>handleCurrentItem(d.title)}
+                  >
+                    <BTitle>{d.title}</BTitle>
+                    <BSmall>{d.desc}</BSmall>
+                  </TextWrapper>
+                )
+            }
           </LeftBill>
-          <RightItem>
-            <RightImage src={BillTag} alt='taxi image'/>
-          </RightItem>
+          {
+            cat === "single" ? (
+              <RightItem bg={imgItem}>
+                {
+                  (imgItem === "Pay bills" 
+                  || imgItem === "Buy Airtime & Data" 
+                  ||imgItem === "Money Transfer"
+                  ) &&  <RightImage src={BillTag} alt='taxi image'/>
+                }
+                {
+                  imgItem === "Pay Toll fee" &&  <WalletImage src={Wallet} alt= "wallet image"/>
+                }
+                 
+              </RightItem>
+            ):(
+              <RightItemII>
+                <WalletImage src={Wallet} alt= "wallet image"/>
+              </RightItemII>
+            )
+          }
+
         </BillSectionTop>
-           
-
-        <BillSectionBottom>
-            <BottomLeft>
-              <Phone/>
-            </BottomLeft>
-            <BottomRight>
-              <BottomRightItem>
-                <TextWrapper style={{border: 'none', padding: 0}}>
-                  <Title>Transact on the go</Title>
-                  <SmallTitle>Stay on top of your business with our easy-to-use app</SmallTitle>
-                </TextWrapper>
-                <Btn>Get Started</Btn>
-                <PhoneStore>
-                  <AppleStore/>
-                  <GoogleStore/>
-                </PhoneStore>
-              </BottomRightItem>
-            </BottomRight>
-        </BillSectionBottom>
-
+           {
+            cat === "single" && (
+              <BillSectionBottom>
+                <BottomLeft>
+                  <Phone/>
+                </BottomLeft>
+                <BottomRight>
+                  <BottomRightItem>
+                    <TextWrapper style={{border: 'none', padding: 0}}>
+                      <Title>Transact on the go</Title>
+                      <BSmall>Stay on top of your business with our easy-<br/>to-use app</BSmall>
+                    </TextWrapper>
+                    <Btn>Get Started</Btn>
+                    <PhoneStore>
+                      <AppleStore/>
+                      <GoogleStore/>
+                    </PhoneStore>
+                  </BottomRightItem>
+                </BottomRight>
+              </BillSectionBottom>
+            )
+           }
         <FundDesc>
           <FundWrapper>
             <FundLeft>
